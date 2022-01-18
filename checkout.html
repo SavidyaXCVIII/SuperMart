@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/checkout.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Fonts & Icons-->
+    <script src="https://kit.fontawesome.com/7b5b4fcd9f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+    <title>SuperMart</title>
+</head>
+<body>
+<!--Navigation bar section start here-->
+
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-between align-items-center mt-3">
+                <div class="col-6 col-md-4">
+                    <a href="index.html">
+                        <img src="images/SuperMART.png" class="img-fluid" alt="...">
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    <button type="button" class="p-2 btn">
+                        <a href="myprofile.html" class="fas fa-user text-dark fa-lg"></a>
+                    </button>
+                    <button type="button" class="p-2 btn">
+                        <a href="checkout.html" class="fas fa-shopping-cart text-dark fa-lg"></a>
+                    </button>
+                    <button type="button" class="p-2 btn" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="fas fa-bars fa-2x fa-lg"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end text-start" tabindex="-1" id="offcanvasNavbar"
+                         aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SuperMart</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="gamification_page.html">
+                                        <span class="fa-solid fa-tag"></span>
+                                        Spin the wheel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="stores.html">
+                                        <span class="fa-solid fa-store"></span>
+                                        Stores</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="wishlist.html">
+                                        <span class="fa-solid fa-heart"></span>
+                                        Wishlist</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-grip"></i> Categories
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                        <li><a class="dropdown-item" href="./categories/fruitsAndVegitables.html">Fruits
+                                            & Vegetables</a></li>
+                                        <li><a class="dropdown-item" href="./categories/meanAndPoultry.html">Meat &
+                                            Poultry</a></li>
+                                        <li><a class="dropdown-item" href="./categories/beverages.html">Beverages</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="./categories/homewareItems.html">Homeware
+                                            items</a></li>
+                                        <li><a class="dropdown-item" href="./categories/snacks.html">Snacks</a></li>
+                                        <li><a class="dropdown-item" href="./categories/beautyProducts.html">Beauty
+                                            Products</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 mb-4 justify-content-center">
+                <div class="col-11">
+                    <form class="d-flex">
+                        <button class="btn fa-solid fa-qrcode fa-lg qr-btn"></button>
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn fa-solid fa-magnifying-glass fa-lg text-light search-btn"></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</nav>
+
+<!--navigation bar section ends here-->
+
+<!--Banner section-->
+
+<div class="container-fluid pd-10 banner">
+    <h1 class="display-3 fw-bold text-center text-light">Checkout</h1>
+</div>
+<div class="total-value text-end fw-bold fs-1 pe-3" style="background-color: #364F6B; color: white;" id="totalValueForm">
+
+</div>
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div id="div-container">
+        </div>
+        <div class="pt-4 container pb-2 mb-3" style="background-color: rgb(190, 189, 189, 0.24)">
+            <div class="row">
+                <div class="col-6 fw-bolder">
+                    Ship to
+                </div>
+                <div class="col-6">
+                    <div><span id="first"></span><span id="last"></span></div>
+                    <div id="email"></div>
+                    <div id="street"></div>
+                    <div id="city"></div>
+                    <div id="code"></div>
+                    <div id="number"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+
+                </div>
+                <div class="col-6">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <u>Edit</u>
+                    </button>
+                </div>
+
+
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6 fw-bold">Pay With</div>
+                <div class="col-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><small>Toggle to change between Card / Cash</small></div>
+                <div class="col-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="changeRadioButton();" value="on">
+                        <label class="form-check-label" for="flexRadioDefault1" >
+                            Cash
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked onclick="changeRadioButton();" value="off">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Debit / Credit
+                        </label>
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#cardDetailModal" id="card" onclick="save();">
+                            <u>Add Card Details</u>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center fw-bold">Loyalty Points</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">Items</div>
+                <div class="col-4"></div>
+                <div class="col-4 text-end" id="itemsTotal"></div>
+            </div>
+            <div class="row">
+                <div class="col-4">Shipping</div>
+                <div class="col-4"></div>
+                <div class="col-4 text-end">Rs.150.00</div>
+            </div>
+            <div class="row">
+                <div class="col-4 fw-bold">Order Total</div>
+                <div class="col-4"></div>
+                <div class="col-4 fw-bold text-end" id="cartTotal"></div>
+            </div>
+            <hr>
+
+        </div>
+        <div class="wishlist">
+            <div class="row pb-4">
+                <div class="cart-btn text-center">
+                    <a class="btn mt-auto cart-btn shadow" href="#">
+                        Confirm and Pay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Footer section-->
+<div class="container-fluid background-color footer">
+    <div class="container">
+        <div class="row fs-2 fw-bold p-2">
+            <div class="col-sm-12 p-2" onclick="window.location.href='index.html'">
+                SuperMart
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-sm-12 col-md-4 col-lg-4 p-2">
+                <div class="fw-bold fs-4">Need Help?</div>
+                Call our customer support at <br>123-456-7890
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 p-2">
+                <div class="fw-bold fs-4">Menu</div>
+                <div onclick="window.location.href='promotions.html'">Promotions</div>
+                <div onclick="window.location.href='index.html'">Categories</div>
+                <div onclick="window.location.href='stores.html'">Stores</div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 p-2">
+                <div class="fw-bold fs-4">Info</div>
+                <div onclick="window.location.href='stores.html'">About Us</div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <i class="fa fa-facebook p-1 fs-1" onclick="window.open('https://facebook.com')"></i>
+                <i class="fa fa-instagram p-1 fs-1" onclick="window.open('https://instagram.com')"></i>
+                <i class="fa fa-twitter p-1 fs-1" onclick="window.open('https://twitter.com')"></i>
+            </div>
+        </div>
+        <div class="row p-2 text-center">
+            <div class="col-sm-12">
+                ©2021 - SuperMart, LLC. All Rights Reserved
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Shipping Address-->
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Shipping Address</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form id="shipping" class="row g-3 needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="validationCustom01" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="John" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustom02" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Doe" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustomUsername" class="form-label">Email</label>
+                            <div class="input-group has-validation">
+                                <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required placeholder="john@gmail.com">
+                                <div class="invalid-feedback">
+                                    Please enter email.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustom03" class="form-label">City</label>
+                            <input type="text" class="form-control" id="validationCustom07" required placeholder="7th street, Rajagiriya">
+                            <div class="invalid-feedback">
+                                Please provide a valid Street.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustom03" class="form-label">City</label>
+                            <input type="text" class="form-control" id="validationCustom03" required placeholder="colombo">
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustom05" class="form-label">Zip</label>
+                            <input type="text" class="form-control" id="validationCustom05" required placeholder="10620">
+                            <div class="invalid-feedback">
+                                Please provide a valid zip.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustom06" class="form-label">Phone number</label>
+                            <input type="text" pattern="(0)\d{8}" class="form-control" id="validationCustom06" required aria-describedby="phoneHelp" placeholder="071234234234">
+                            <div class="invalid-feedback">
+                                Please provide a valid mobile number.
+                            </div>
+                            <div id="phoneHelp" class="form-text">Please enter a mobile number in this format - 071234234234.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <button class="btn cart-btn" type="submit" style="background-color: #f97068;color: black;border-radius: 30px;width: 20%;">Add</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Card Details-->
+<div class="modal" id="cardDetailModal" tabindex="-1" aria-labelledby="cardDetailLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cardDetailLabel">Card Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="background-color: rgb(190, 189, 189, 0.24)">
+                    <form class="row g-3 pb-3 needs-validation-form" novalidate>
+                        <div class="row pt-3">
+                            <div class="col-6 fs-4 fw-bold">Card details</div>
+                            <div class="col-6 text-end">
+                                <i class="fa-brands fa-cc-mastercard fa-3x pe-2" style="color: orange"></i>
+                                <i class="fa-brands fa-cc-visa fa-3x pe-2" style="color: darkblue"></i>
+                                <i class="fa-brands fa-cc-amex fa-3x pe-2" style="color: deepskyblue"></i>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCard01" class="form-label">Your card number *</label>
+                            <input type="number" class="form-control" id="validationCard01" placeholder="**** ***** **** ****" required value="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="validationCard02" class="form-label">Expiry date *</label>
+                                <input type="text" class="form-control" id="validationCard02" required placeholder="Month" value="">
+                                <div class="invalid-feedback">
+                                    Please provide a valid month.
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <label for="validationCard03" class="form-label">.</label>
+                                <input type="number" class="form-control" id="validationCard03" required placeholder="Year" value="">
+                                <div class="invalid-feedback">
+                                    Please provide a valid year.
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <label for="validationCard04" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="validationCard04" required placeholder="Code" value="">
+                                <div class="invalid-feedback">
+                                    Please provide a valid CVV.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-end"><button class="cart-btn btn" type="submit" style="background-color: #f97068;color: black;border-radius: 30px;width: 20%;">Add Card</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    let totalValue = getCookie("total");
+
+    function setCookie(cName, cValue, expDays) {
+        let date = new Date();
+        date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+    }
+
+    function getCookie(cName) {
+        const name = cName + "=";
+        const cDecoded = decodeURIComponent(document.cookie); //to be careful
+        const cArr = cDecoded.split('; ');
+        let res;
+        cArr.forEach(val => {
+            if (val.indexOf(name) === 0) res = val.substring(name.length);
+        })
+        return res
+    }
+
+    console.log(document.cookie);
+    let i = 1;
+
+    try {
+        let favourite = JSON.parse(getCookie('supermart'));
+        let favouriteList = favourite.items;
+        console.log(favouriteList);
+        let str = '<ul>';
+        favouriteList.forEach(fav => {
+            str += '<li>' + fav.name + '</li>'
+        })
+        str += '</ul>';
+        document.getElementById("div-container").innerHTML = str;
+    } catch (err) {
+        console.log(err);
+        let favourite = JSON.parse(getCookie('supermart'));
+
+
+        favourite.forEach(fav => {
+            if (fav.cart === true) {
+                if (fav.discountedPrice !== 0) {
+                    let div = document.getElementById('div-container');
+                    let contentSection = document.createElement('div');
+                    contentSection.innerHTML = '<div>' +
+                        '<h5 class="text-end pe-1 pe-md-5"></h5>' +
+                        '<div class="row">' +
+                        '<div class="col-1 col-md-2 text-md-end fw-bolder">' + i + '.</div>' +
+                        '<div class="col-2 col-md-3"></div>' +
+                        '<div class="col-5 col-md-4">' +
+                        ' <div class="row fw-bolder" style="text-transform: capitalize;">' +
+                        fav.name + ' , ' + fav.quantity +
+                        ' </div>' +
+                        ' <div class="row">' +
+                        '<div class="col-6"> <del> RS.' + fav.price + '.00 </del></div>' +
+                        '<div class="col-6" style="color: red">$' + fav.discountedPrice + '.00</div>' +
+                        ' </div>' +
+                        ' </div>' +
+                        ' <div class="col-4 col-md-3 mt-2">' +
+                        ' <input class="input-number" id="' + fav.id + '" type="text" value="1" min="1" max="5" disabled="disabled">' +
+                        '</div>' +
+                        '<hr class="dropdown-divider">' +
+                        '</div>' +
+
+                        '</div> ';
+                    div.appendChild(contentSection);
+                    i = i + 1;
+                } else {
+                    let div = document.getElementById('div-container');
+                    let contentSection = document.createElement('div');
+                    contentSection.innerHTML = '<div>' +
+                        '<h5 class="text-end pe-1 pe-md-5"></h5>' +
+                        '<div class="row">' +
+                        '<div class="col-1 col-md-2 text-md-end fw-bolder">' + i + '.</div>' +
+                        '<div class="col-2 col-md-3"></div>' +
+                        '<div class="col-5 col-md-4">' +
+                        ' <div class="row fw-bolder" style="text-transform: capitalize;">' +
+                        fav.name + ' , ' + fav.quantity +
+                        ' </div>' +
+                        ' <div class="row">' +
+                        '<div class="col-6">RS.' + fav.price + '.00 </div>' +
+                        '<div class="col-6"></div>' +
+                        ' </div>' +
+                        ' </div>' +
+                        ' <div class="col-4 col-md-3 mt-2">' +
+                        ' <input class="input-number" id="' + fav.id + '" type="text" value="1" min="1" max="5" disabled="disabled">' +
+                        '</div>' +
+                        '<hr class="dropdown-divider">' +
+                        '</div>' +
+                        '</div> ';
+                    div.appendChild(contentSection);
+                    i = i + 1;
+                }
+            }
+        })
+    }
+
+    function clickId(id) {
+        str = '';
+        let click = id;
+        try {
+            let favourite = JSON.parse(getCookie('supermart'));
+            let favouriteList = favourite.items;
+            let str = '#';
+            favouriteList.forEach(fav => {
+                if (fav.id === click) {
+                    str += fav.id;
+                }
+            })
+        } catch (r) {
+            let favourite = JSON.parse(getCookie('supermart'));
+            let str = '#';
+            favourite.forEach(fav => {
+                if (fav.id === click) {
+                    str += fav.id;
+                }
+            })
+        }
+
+    }
+
+
+    function changeRadioButton() {
+        let selected = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+        console.log(selected);
+        if (selected === "on") {
+            document.getElementById("card").disabled = true;
+        } else {
+            document.getElementById("card").disabled = false;
+        }
+    }
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                    getShippingDetails();
+                }, false)
+            })
+    })();
+
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation-form')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                    saveCardDetails();
+                }, false)
+            })
+    })()
+
+
+
+
+
+
+
+
+    function getShippingDetails() {
+        let first = document.getElementById("validationCustom01").value;
+        document.cookie="first=" + first;
+        let last = document.getElementById("validationCustom02").value;
+        document.cookie="last=" + last;
+        let email = document.getElementById("validationCustomUsername").value;
+        document.cookie="email=" + email;
+        let street = document.getElementById("validationCustom07").value;
+        document.cookie="street=" + street;
+        let city = document.getElementById("validationCustom03").value;
+        document.cookie="city=" + city;
+        let code = document.getElementById("validationCustom05").value;
+        document.cookie="code=" + code;
+        let number = document.getElementById("validationCustom06").value;
+        document.cookie="number=" + number;
+        console.log(document.cookie);
+    }
+
+    function saveCardDetails() {
+        let cardnumber = document.getElementById("validationCard01").value;
+        document.cookie = "cardnumber=" + cardnumber;
+        let year = document.getElementById("validationCard02").value;
+        document.cookie = "year=" + year;
+        let month = document.getElementById("validationCard03").value;
+        document.cookie = "month=" + month;
+        let cvv = document.getElementById("validationCard04").value;
+        document.cookie = "cvv=" + cvv;
+    }
+
+
+     function save() {
+        try {
+            let cardnumber = getCookie('cardnumber');
+            document.getElementById("validationCard01").value = cardnumber;
+            let year = getCookie('year');
+            document.getElementById("validationCard02").value = year;
+            let email = getCookie('email');
+            document.getElementById("validationCard03").value = email;
+            let street = getCookie('street');
+            document.getElementById("validationCard04").value = street;
+        }
+        catch (e) {
+
+        }
+    }
+
+
+
+    try {
+        window.onload = function load() {
+            let firstId = document.getElementById('first');
+            firstId.innerText = "";
+            firstId.innerText += getCookie('first');
+
+            let lastId = document.getElementById('last');
+            lastId.innerText = "";
+            lastId.innerText +=  getCookie('last');
+
+            let emailId = document.getElementById('email');
+            emailId.innerText = "";
+            emailId.innerText += getCookie('email');
+
+            let streetId = document.getElementById('street');
+            streetId.innerText = "";
+            streetId.innerText += getCookie('street');
+
+            let cityId = document.getElementById('city');
+            cityId.innerText = "";
+            cityId.innerText += getCookie('city');
+
+            let codeId = document.getElementById('code');
+            codeId.innerText = "";
+            codeId.innerText += getCookie('code');
+
+            let numberId = document.getElementById('number');
+            numberId.innerText = "";
+            numberId.innerText += getCookie('number');
+
+            let value = document.getElementById('totalValueForm');
+            value.innerText = "";
+            value.innerText += 'RS.' + getCookie('total')  +'.00';
+
+            let total = document.getElementById('cartTotal');
+            total.innerText = "";
+            let add = getCookie('total');
+            add = parseInt(add);
+            add = add + 150;
+            total.innerText += 'RS.' + add  +'.00';
+
+            let items = document.getElementById('itemsTotal');
+            items.innerText = "";
+            items.innerText += i -1;
+
+        }
+    } catch (e) {
+
+    }
+
+
+    function addTotal() {
+        let ele = document.getElementById('total');
+        ele.innerHTML += "RS.";
+        ele.innerHTML += total;
+    }
+
+    function addTotal() {
+        let ele = document.getElementById('total');
+        ele.innerHTML += "RS.";
+        ele.innerHTML += total;
+    }
+
+
+
+</script>
+
+
+
+
+<!--End of footer section-->
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+div .form-control:focus {
+    border-color: #364F6B;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgb(54, 79, 107);
+}
+
+.footer{
+    background-color: #364F6B;
+    color: white;
+}
+
+.search button {
+    background-color: #364F6B;
+}
+
+.qr-btn{
+    color: #364F6B !important;
+    border-color: #364F6B !important;
+}
+
+.search-btn{
+    background-color: #364F6B !important;
+}

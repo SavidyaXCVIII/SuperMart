@@ -1,0 +1,78 @@
+.category-grid{
+    padding:5% 0;
+}
+
+.category-grid .item .box {
+    text-align:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    height:200px;
+    position:relative;
+}
+
+.category-grid .item .cover {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+}
+
+.category-grid .item .title {
+    text-transform:uppercase;
+    font-weight:bold;
+    color: #ffffff;
+}
+
+/*Slider section*/
+.carousel-caption{
+
+}
+.carousel-caption h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff;
+    }
+.carousel-caption p{
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.dark:after {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+}
+
+div .signup-button{
+    background-color: #364F6B;
+    color: white;
+    border-radius: 30px;
+    width: 30%;
+}
+
+div .sale-badge{
+    border-radius: 70%;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 70px;
+    width: 70px;
+    background-color: #f97068;
+    color: black;
+    position: absolute;
+}
+div .sale-badge h4{
+    padding-top: 10px;
+}

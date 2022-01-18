@@ -1,0 +1,498 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/qr.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Fonts & Icons-->
+    <script src="https://kit.fontawesome.com/7b5b4fcd9f.js" crossorigin="anonymous"></script>
+    <!--QR Scanning Instascan js-->
+    <script src="scripts/instascan.min.js"></script>
+    <!--swiper container-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+    <title>SUPER MART</title>
+    <style>
+        .btnscan{
+            background-color: #364F6B;
+            padding: 15px;
+            font-size: 10px;
+        }
+        .btnscan:focus{
+            background-color:#364F6B;
+        }
+        .btnscan:active{
+            background-color:#364F6B;
+        }
+    </style>
+</head>
+<body>
+<!--<nav class="navbar navbar-light bg-light">-->
+<!--    <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="#">SuperMart</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--    </div>-->
+<!--    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">-->
+<!--        <div class="bg-dark p-4">-->
+<!--            <h5 class="text-white h4">Collapsed content</h5>-->
+<!--            <span class="text-muted">Toggleable via the navbar brand.</span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--Navigation bar section start here-->
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-between align-items-center mt-3">
+                <div class="col-6 col-md-4">
+                    <a  href="#">
+                        <img src="images/SuperMART.png" class="img-fluid" alt="...">
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    <button type="button" class="p-2 btn">
+                        <a href="myprofile.html" class="fas fa-user text-dark fa-lg"></a>
+                    </button>
+                    <button type="button" class="p-2 btn">
+                        <a href="cart.html" class="fas fa-shopping-cart text-dark fa-lg"></a>
+                    </button>
+                    <button type="button" class="p-2 btn" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="fas fa-bars fa-2x fa-lg"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end text-start" tabindex="-1" id="offcanvasNavbar"
+                         aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SuperMart</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="gamification_page.html">
+                                        <span class="fa-solid fa-tag"></span>
+                                          Spin the wheel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="stores.html">
+                                        <span class="fa-solid fa-store"></span>
+                                          Stores</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="wishlist.html">
+                                        <span class="fa-solid fa-heart"></span>
+                                          Wishlist</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-grip"></i> Categories
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                        <li><a class="dropdown-item" href="./categories/fruitsAndVegitables.html">Fruits & Vegetables</a></li>
+                                        <li><a class="dropdown-item" href="./categories/meanAndPoultry.html">Meat & Poultry</a></li>
+                                        <li><a class="dropdown-item" href="./categories/beverages.html">Beverages</a></li>
+                                        <li><a class="dropdown-item" href="./categories/homewareItems.html">Homeware items</a></li>
+                                        <li><a class="dropdown-item" href="./categories/snacks.html">Snacks</a></li>
+                                        <li><a class="dropdown-item" href="./categories/beautyProducts.html">Beauty Products</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 mb-4 justify-content-center">
+                <div class="col-11">
+                    <row class="d-flex">
+                        <button class="btn fa-solid fa-qrcode fa-lg qr-btn" onclick="openNav()"></button>
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn fa-solid fa-magnifying-glass fa-lg text-light search-btn"></button>
+                    </row>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</nav>
+<!--QR pop up model starts here-->
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <div class="container">
+            <div class="text-center">
+                <div class="boxn">
+                    <video id="preview" width="300" height="270" style="display:none"></video>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function myFunction() {
+                var x = document.getElementById("preview");
+                var y = document.getElementById("btnscan");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+
+            let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+            scanner.addListener('scan', function (content) {
+                alert(content);
+            });
+            Instascan.Camera.getCameras().then(function (cameras) {
+                if (cameras.length > 0) {
+                    scanner.start(cameras[0]);
+                } else {
+                    console.error('No cameras found.');
+                }
+            }).catch(function (e) {
+                console.error(e);
+            });
+        </script>
+        <div class="text-center">
+            <button id="btnscan" type="button" class="btn btn-primary btn-lg rounded-pill btnscan" onclick="myFunction()">SCAN QR CODE</button>
+        </div>
+    </div>
+</div>
+<!--QR pop up model ends here-->
+
+<!--Scripts for QR code-->
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.display = "block";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.display = "none";
+    }
+
+    function onScanSuccess(qrCodeMessage) {
+        document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+    }
+
+    function onScanError(errorMessage) {
+        //handle scan error
+    }
+
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+
+</script>
+<!--QR code scripts end here-->
+
+<!--navigation bar section ends here-->
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+        <div class="carousel-item dark active">
+            <img src="images/Banners/home.jpeg" alt="home banner" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+                <p class="fs-1">Get 15% on your first order.</p>
+                <p>Conditions apply*</p>
+                <button type="button" class="btn shadow btn-outline-secondary md-5 signup-button" onclick="window.location.href='Login_page.html'">Login</button>
+            </div>
+        </div>
+        <div class="carousel-item dark">
+            <img src="images/Banners/home-2.jpg" alt="home banner" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+                <p class="fs-1">Stock Up on Daily Essentials</p>
+                <p>Save Big on Your Favorite Brands</p>
+            </div>
+        </div>
+        <div class="carousel-item dark">
+            <img src="images/Banners/wishlist.png" alt="home banner" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+                <p class="fs-1">WE'LL DELIVER EVERYTHING YOU NEED</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<!--Promotions section-->
+<div class="container">
+    <h1 class="store-address fw-bold mt-4">Promotions</h1>
+    <div class="swiper">
+        <div class="swiper-wrapper" >
+            <div class="swiper-slide card h-100 border-dark rounded me-3">
+                <!-- Sale badge-->
+                <div class="badge sale-badge">
+                    <h4 class="fw-bold">10%</h4>
+                    off
+                </div>
+                <!-- wishlist heart-->
+                <div class="text-black position-absolute heart" style="top: 0.5rem; right: 0.5rem">
+                    <input type="checkbox" class="btn-check" name="ginger" id="ginger" onclick="getIdName(this.id); checkItem(); ">
+                    <label class="btn btn-outline-danger rounded-5" for="ginger" ><i class="fa-regular fa-heart fs-2"></i></label>
+                </div>
+                <!-- Product image-->
+                <img class="card-img-top" src="images/Beverages/ginger-ale.jpg" alt="..." />
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="productName" style="font-weight: bold">Ginger Ale - 200ml</h5>
+                        <!-- Product price-->
+                        <span class="text-muted text-decoration-line-through">Rs 380.00</span>
+                        Rs <p class="productPrice" style="display: inline-block; vertical-align: top">340.00</p>
+                    </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent ">
+                    <div class="text-center cart-btn"><a class="btn btn-outline-dark shadow mt-auto" href="#">Add to cart</a></div>
+                </div>
+            </div>
+            <div class="swiper-slide card h-100 border-dark rounded me-3">
+                <!-- Sale badge-->
+                <div class="badge sale-badge">
+                    <h4 class="fw-bold">20%</h4>
+                    off
+                </div>
+                <!-- wishlist heart-->
+                <div class="text-black position-absolute heart" style="top: 0.5rem; right: 0.5rem">
+                    <input type="checkbox" class="btn-check" name="bellpepper" id="bellpepper" onclick="getIdName(this.id); checkItem(); ">
+                    <label class="btn btn-outline-danger rounded-5" for="bellpepper" ><i class="fa-regular fa-heart fs-2"></i></label>
+                </div>
+                <!-- Product image-->
+                <img class="card-img-top" src="images/Fruits/Bellpepper.png" alt="..." />
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="productName" style="font-weight: bold">Bell pepper - 250g</h5>
+                        <!-- Product price-->
+                        <span class="text-muted text-decoration-line-through">Rs 450.00</span>
+                        Rs <p class="productPrice" style="display: inline-block; vertical-align: top">390.00</p>
+                    </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent ">
+                    <div class="text-center cart-btn"><a class="btn btn-outline-dark shadow mt-auto" href="#">Add to cart</a></div>
+                </div>
+            </div>
+            <div class="swiper-slide card h-100 border-dark rounded me-3">
+                <!-- Sale badge-->
+                <div class="badge sale-badge">
+                    <h4 class="fw-bold">10%</h4>
+                    off
+                </div>
+                <!-- wishlist heart-->
+                <div class="text-black position-absolute heart" style="top: 0.5rem; right: 0.5rem">
+                    <input type="checkbox" class="btn-check" name="cassava" id="cassava" onclick="getIdName(this.id); checkItem(); ">
+                    <label class="btn btn-outline-danger rounded-5" for="cassava" ><i class="fa-regular fa-heart fs-2"></i></label>
+                </div>
+                <!-- Product image-->
+                <img class="card-img-top" src="images/Snacks/Rancrisp%20Cassava%20Chips,%20100g,%20140.jpg" alt="..." />
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="productName" style="font-weight: bold">Rancrisp Cassava Chips, 100g</h5>
+                        <!-- Product price-->
+                        <span class="text-muted text-decoration-line-through">Rs 140</span>
+                        Rs <p class="productPrice" style="display: inline-block; vertical-align: top">120.00</p>
+                    </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent ">
+                    <div class="text-center cart-btn"><a class="btn btn-outline-dark shadow mt-auto" href="#">Add to cart</a></div>
+                </div>
+            </div>
+        <div class="swiper-slide card h-100 border-dark rounded me-3">
+            <!-- Sale badge-->
+            <div class="badge sale-badge">
+                <h4 class="fw-bold">10%</h4>
+                off
+            </div>
+            <!-- wishlist heart-->
+            <div class="text-black position-absolute heart" style="top: 0.5rem; right: 0.5rem">
+                <input type="checkbox" class="btn-check" name="water" id="water" onclick="getIdName(this.id); checkItem(); ">
+                <label class="btn btn-outline-danger rounded-5" for="water" ><i class="fa-regular fa-heart fs-2"></i></label>
+            </div>
+            <!-- Product image-->
+            <img class="card-img-top" src="images/Beverages/tonic-water.jpg" alt="..." />
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="productName" style="font-weight: bold">Tonic Water - 200ml</h5>
+                    <!-- Product price-->
+                    <span class="text-muted text-decoration-line-through">Rs 4200.00</span>
+                    Rs <p class="productPrice" style="display: inline-block; vertical-align: top">390.00</p>
+                </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent ">
+                <div class="text-center cart-btn"><a class="btn btn-outline-dark shadow mt-auto" href="#">Add to cart</a></div>
+            </div>
+        </div>
+    </div>
+    </div></div>
+
+<!--Categories section-->
+<div class="container category-grid">
+    <div class="row g-1">
+        <div class="col-6 col-sm-6 col-md-4 item">
+            <div class="box" style="background-image:url(images/Categories/vegetables.jpeg)">
+                <div class="cover">
+                    <a class="cover nav-link" aria-current="page" href="categories/fruitsAndVegitables.html">
+                        <p class="fs-5 title">Fruits and Vegetables</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 item">
+            <div class="box" style="background-image:url(images/Categories/beverages.jpeg)">
+                <div class="cover">
+                    <a class="cover nav-link" aria-current="page" href="categories/beverages.html">
+                        <p class="fs-5 title">Beverages</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 item">
+            <div class="box" style="background-image:url(images/Categories/meat.jpg)">
+                <div class="cover">
+                    <a class="cover nav-link" aria-current="page" href="categories/meanAndPoultry.html">
+                        <p class="fs-5 title">Meat and Poultry</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4     item">
+            <div class="box" style="background-image:url(images/Categories/snacks.jpg)">
+                <div class="cover">
+                    <a class="cover nav-link" aria-current="page" href="categories/snacks.html">
+                        <p class="fs-5 title">Snacks</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 item">
+            <div class="box" style="background-image:url(images/Categories/homware.png)">
+                <div class="cover">
+                    <a class="cover nav-link" aria-current="page" href="categories/homewareItems.html">
+                        <p class="fs-5 title">Homeware Items</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 item">
+            <div class="box" style="background-image:url(images/Categories/beauty.jpeg)">
+                <div class="cover">
+                    <a class="cover nav-link" aria-current="page" href="categories/beautyProducts.html">
+                        <p class="fs-5 title">Beauty Products</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Footer section-->
+<div class="container-fluid background-color footer">
+    <div class="container">
+        <div class="row fs-2 fw-bold p-2">
+            <div class="col-sm-12 p-2" onclick="window.location.href='index.html'">
+                SuperMart
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-sm-12 col-md-4 col-lg-4 p-2">
+                <div class="fw-bold fs-4">Need Help?</div>
+                Call our customer support at <br>123-456-7890
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 p-2">
+                <div class="fw-bold fs-4">Menu</div>
+                <div onclick="window.location.href='promotions.html'">Promotions</div>
+                <div onclick="window.location.href='index.html'">Categories</div>
+                <div onclick="window.location.href='stores.html'">Stores</div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 p-2">
+                <div class="fw-bold fs-4">Info</div>
+                <div onclick="window.location.href='stores.html'">About Us</div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <i class="fa fa-facebook p-1 fs-1" onclick="window.open('https://facebook.com')"></i>
+                <i class="fa fa-instagram p-1 fs-1" onclick="window.open('https://instagram.com')"></i>
+                <i class="fa fa-twitter p-1 fs-1" onclick="window.open('https://twitter.com')"></i>
+            </div>
+        </div>
+        <div class="row p-2 text-center">
+            <div class="col-sm-12">
+                ©2021 - SuperMart, LLC. All Rights Reserved
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of footer section-->
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<script>
+    const swiper =new Swiper('.swiper', {
+        slidesPerView: 2,
+        grabCursor: true,
+    });
+</script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+</body>
+</html>

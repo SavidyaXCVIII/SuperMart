@@ -1,0 +1,30 @@
+.swiper-slide{
+    /*border-color: #a09d9d;*/
+    /*border-style: solid;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+#map {
+    height: 350px;
+    width: 100%;
+    padding: 0;
+}
+
+.store-address{
+    color: #364F6B;
+    font-weight: bold;
+}
+
+.banner {
+    background-image: url("../images/Banners/stores.jpg");
+    background-repeat: no-repeat;
+    background-position:  center center;
+    background-size: cover ;
+    transition: 0.2s;
+    padding: 4em;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.carousel-item {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}

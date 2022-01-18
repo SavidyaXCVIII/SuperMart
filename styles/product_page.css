@@ -1,0 +1,27 @@
+.quantity{
+    color: grey;
+}
+
+.image{
+    width: fit-content;
+    justify-items: center;
+}
+
+div .cart-button{
+    background-color: #F97068;
+    color: white;
+    border-radius: 30px;
+    width: 70%;
+}
+
+div .buy-button{
+    border-color: #F97068;
+    border-radius: 30px;
+    width: 70%;
+}
+
+div .go-back-btn{
+    width: 40%;
+    border-color: #F97068;
+    border-radius: 30px;
+}

@@ -1,0 +1,28 @@
+div .sale-badge{
+    border-radius: 70%;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 70px;
+    width: 70px;
+    background-color: #f97068;
+    color: black;
+    position: absolute;
+}
+div .sale-badge h4{
+    padding-top: 10px;
+}
+
+.cart-btn .btn{
+    background-color: #f97068;
+    color: white;
+    border-radius: 30px;
+    width: 80%;
+
+}
+
+.heart .btn {
+    border-color: white;
+}
+
+
+

@@ -1,0 +1,101 @@
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.overlay-content {
+    position: relative;
+    top: 2%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 1px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    font-size: 60px;
+}
+.result{
+    background-color: green;
+    color:#fff;
+    padding:20px;
+}
+.row{
+    display:flex;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 1px;
+        right: 15px;
+    }
+}
+
+/*Styles for the QR scan pop up page starts here*/
+/*.preview{
+    margin-left: 100px;
+    margin-top: 200px;
+}*/
+.btnscan{
+    background-color: #364F6B;
+    padding: 15px;
+    font-size: 10px;
+}
+.btnscan:focus{
+    background-color:#364F6B;
+}
+.btnscan:active{
+    background-color:#364F6B;
+}
+/*corner border*/
+.boxn {
+    --b:5px;   /* thickness of the border */
+    --c:grey;   /* color of the border */
+    --w:20px;  /* width of border */
+
+
+    border:var(--b) solid transparent; /* space for the border */
+    --g:#0000 90deg,var(--c) 0;
+    background:
+            conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--g)) 0    0,
+            conic-gradient(from 180deg at top    var(--b) right var(--b),var(--g)) 100% 0,
+            conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--g)) 0    100%,
+            conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--g)) 100% 100%;
+    background-size:var(--w) var(--w);
+    background-origin:border-box;
+    background-repeat:no-repeat;
+
+    /*Irrelevant code*/
+    width:330px;
+    height:230px;
+    box-sizing:border-box;
+    margin:5px;
+    display:inline-flex;
+    font-size:30px;
+    justify-content:center;
+    align-items:center;
+    line-height:90px;
+}
